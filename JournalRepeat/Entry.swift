@@ -8,14 +8,14 @@
 
 import Foundation
 
-class Entry {
+class Entry: Equatable {
     
     
     var timeStamp = Date()
     var title: String
     var bodyText: String
     
-    init(timeStamp: Date, title: String, bodyText: String) {
+    init(timeStamp: Date = Date(), title: String, bodyText: String) {
         
         self.timeStamp = timeStamp
         self.title = title
@@ -23,9 +23,9 @@ class Entry {
         
         
     }
+    
+}
 
-    
-    
-    
-    
+func ==(lhs: Entry, rhs: Entry) -> Bool {
+    return lhs.timeStamp == rhs.timeStamp && lhs.title == rhs.title && lhs.bodyText == rhs.bodyText
 }
