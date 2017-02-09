@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -35,7 +36,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="T6d-Wk-yOU" kind="show" id="umx-im-PVt"/>
+                                    <segue destination="T6d-Wk-yOU" kind="show" identifier="toShowEntry" id="umx-im-PVt"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -68,33 +69,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entry..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o1E-HL-7uG">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entry..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o1E-HL-7uG">
                                 <rect key="frame" x="16" y="94" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gBn-db-ajZ">
-                                <rect key="frame" x="16" y="153" width="343" height="261"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsr-aV-RFb">
-                                <rect key="frame" x="35" y="559" width="304" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsr-aV-RFb">
+                                <rect key="frame" x="35" y="554" width="304" height="35"/>
                                 <color key="backgroundColor" red="0.8974510777697412" green="1" blue="0.99645188240357008" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Clear">
                                     <color key="titleShadowColor" red="0.68546234800304773" green="1" blue="0.98741605689471734" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="L74-Ws-NTf">
+                                <rect key="frame" x="16" y="145" width="343" height="331"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="o1E-HL-7uG" secondAttribute="trailing" id="0Sf-qG-DfJ"/>
+                            <constraint firstItem="o1E-HL-7uG" firstAttribute="top" secondItem="pLW-TN-nsh" secondAttribute="bottom" constant="30" id="1z2-eC-neO"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="o1E-HL-7uG" secondAttribute="leading" id="2gq-om-9J2"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="L74-Ws-NTf" secondAttribute="leading" id="3nc-xe-8UV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lsr-aV-RFb" secondAttribute="trailing" constant="20" id="Pqt-wn-8Uv"/>
+                            <constraint firstItem="kac-ri-T9U" firstAttribute="top" secondItem="lsr-aV-RFb" secondAttribute="bottom" constant="78" id="WQ6-La-O6v"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="L74-Ws-NTf" secondAttribute="trailing" id="lln-rQ-VS5"/>
+                            <constraint firstItem="lsr-aV-RFb" firstAttribute="leading" secondItem="uRj-4q-IeD" secondAttribute="leadingMargin" constant="19" id="rQx-Wt-myy"/>
+                            <constraint firstItem="L74-Ws-NTf" firstAttribute="top" secondItem="o1E-HL-7uG" secondAttribute="bottom" constant="21" id="ryX-Nj-4cn"/>
+                            <constraint firstItem="lsr-aV-RFb" firstAttribute="top" secondItem="L74-Ws-NTf" secondAttribute="bottom" constant="78" id="uv7-YK-KCB"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="d79-lp-cfT">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="kcS-gZ-ZVv"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="EntryTitleTextLable" destination="o1E-HL-7uG" id="QOm-qe-JXl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dc5-hf-L0O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -120,6 +136,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Xng-Xq-2QK"/>
+        <segue reference="umx-im-PVt"/>
     </inferredMetricsTieBreakers>
 </document>

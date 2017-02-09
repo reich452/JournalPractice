@@ -22,12 +22,13 @@ class EntryController {
     
     // function that adds the entry parameter to the entries array
     
-    func add(entry: Entry) {
-        
+    func addEntryWith(title: String, bodyText: String, to entry: Entry) {
+        let entry = Entry(timeStamp: Date(), title: title, bodyText: bodyText)
         
         entrys.append(entry)
         
     }
+    
     
     // MARK: - Read 
     

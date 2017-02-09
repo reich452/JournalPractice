@@ -8,20 +8,53 @@
 
 import UIKit
 
-class EntryDetailViewController: UIViewController {
+class EntryDetailViewController: UIViewController, UITextFieldDelegate {
+    
+    // MARK: - Properties
+    
+    @IBOutlet weak var EntryTitleTextLable: UITextField!
+    @IBOutlet weak var DetailJournalTextView: UITextView!
+    
+    var entry: Entry?
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        EntryTitleTextLable.delegate = self
+        
+        updateViews()
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func updateViews() {
+        guard let entry = entry else { return }
+        EntryTitleTextLable.text = entry.title
+        DetailJournalTextView.text = entry.bodyText
+    }
+    
+    
+    // MARK: - Actions 
+    
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        
+        
+    }
+    
+    
+    @IBAction func clearButtonTapped(_ sender: Any) {
+        self.EntryTitleTextLable.text = ""
+        self.DetailJournalTextView.text = ""
+        
     }
     
 
+  
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+        
+    }
     /*
     // MARK: - Navigation
 

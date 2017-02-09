@@ -83,8 +83,8 @@
 		011C59B71E4BD5A3007B5F2B /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				011C59C01E4BE45B007B5F2B /* EntryDetailViewController.swift */,
 				011C59BE1E4BE3F8007B5F2B /* EntryListTableViewController.swift */,
+				011C59C01E4BE45B007B5F2B /* EntryDetailViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
